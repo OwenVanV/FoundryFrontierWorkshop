@@ -24,7 +24,7 @@ MODULES = [
     {
         "id": "01",
         "title": "01 — Data Exploration",
-        "file": "01_data_exploration.py",
+        "file": "llm/01_data_exploration.py",
         "icon": "📊",
         "summary": "Use Azure OpenAI to profile and understand the fraud dataset landscape.",
         "highlights": [
@@ -37,7 +37,7 @@ MODULES = [
     {
         "id": "02",
         "title": "02 — Pattern Detection",
-        "file": "02_pattern_detection.py",
+        "file": "llm/02_pattern_detection.py",
         "icon": "🎯",
         "summary": "Structured JSON outputs for parseable anomaly detection — smurfing, temporal patterns, shell companies.",
         "highlights": [
@@ -50,7 +50,7 @@ MODULES = [
     {
         "id": "03",
         "title": "03 — Cross-Reference Analysis",
-        "file": "03_cross_reference_analysis.py",
+        "file": "llm/03_cross_reference_analysis.py",
         "icon": "🔗",
         "summary": "Multi-turn conversations connecting signals across CSV, JSON, and time-series data.",
         "highlights": [
@@ -63,7 +63,7 @@ MODULES = [
     {
         "id": "04",
         "title": "04 — Fraud Ring Investigation",
-        "file": "04_fraud_ring_investigation.py",
+        "file": "llm/04_fraud_ring_investigation.py",
         "icon": "🕵️",
         "summary": "Network graph reasoning to map the full fraud ring and generate a formal investigation report.",
         "highlights": [
@@ -76,7 +76,7 @@ MODULES = [
     {
         "id": "05",
         "title": "05 — Evaluation Framework",
-        "file": "05_evaluation_framework.py",
+        "file": "llm/05_evaluation_framework.py",
         "icon": "📏",
         "summary": "Precision, recall, F1 against ground truth. Prompt variant testing.",
         "highlights": [
@@ -89,7 +89,7 @@ MODULES = [
     {
         "id": "06",
         "title": "06 — Observability Dashboard",
-        "file": "06_observability_dashboard.py",
+        "file": "llm/06_observability_dashboard.py",
         "icon": "📈",
         "summary": "Cost analysis, latency distributions, platform health, and production readiness.",
         "highlights": [

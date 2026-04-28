@@ -85,7 +85,7 @@ The `USE_MANAGED_IDENTITY` flag controls authentication across **all** workshop 
 **Discussion prompt:** *"We sent statistical summaries, not raw data. What anomalies might we miss with this approach? When would you send raw rows instead?"*
 
 ```bash
-uv run python 01_data_exploration.py
+uv run python llm/01_data_exploration.py
 ```
 
 ---
@@ -110,7 +110,7 @@ uv run python 01_data_exploration.py
 **Discussion prompt:** *"We used zero-shot detection (no examples). How would few-shot prompting change the results? What would good examples look like?"*
 
 ```bash
-uv run python 02_pattern_detection.py
+uv run python llm/02_pattern_detection.py
 ```
 
 ---
@@ -138,7 +138,7 @@ uv run python 02_pattern_detection.py
 **Observe:** Token usage grows ~2x per turn. Turn 4 sends the full conversation history.
 
 ```bash
-uv run python 03_cross_reference_analysis.py
+uv run python llm/03_cross_reference_analysis.py
 ```
 
 ---
@@ -162,7 +162,7 @@ uv run python 03_cross_reference_analysis.py
 **Discussion prompt:** *"This report could trigger account freezes affecting real people. What human oversight is needed before acting on AI-generated findings?"*
 
 ```bash
-uv run python 04_fraud_ring_investigation.py
+uv run python llm/04_fraud_ring_investigation.py
 ```
 
 ---
@@ -188,7 +188,7 @@ uv run python 04_fraud_ring_investigation.py
 **Discussion prompt:** *"In fraud detection, is it worse to freeze an innocent account (false positive) or miss a fraudster (false negative)? How does your answer change the target metrics?"*
 
 ```bash
-uv run python 05_evaluation_framework.py
+uv run python llm/05_evaluation_framework.py
 ```
 
 ---
@@ -211,7 +211,7 @@ uv run python 05_evaluation_framework.py
 6. Production readiness score with pass/warn/fail checks
 
 ```bash
-uv run python 06_observability_dashboard.py
+uv run python llm/06_observability_dashboard.py
 ```
 
 ---

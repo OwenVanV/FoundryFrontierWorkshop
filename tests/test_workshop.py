@@ -153,34 +153,34 @@ class TestLLMModuleImports:
 
     def test_import_module_01(self):
         spec = importlib.util.spec_from_file_location(
-            "m01", PROJECT_ROOT / "01_data_exploration.py")
+            "m01", PROJECT_ROOT / "llm" / "01_data_exploration.py")
         mod = importlib.util.module_from_spec(spec)
         # Don't execute — just verify it can be loaded
         assert spec is not None
 
     def test_import_module_02(self):
         spec = importlib.util.spec_from_file_location(
-            "m02", PROJECT_ROOT / "02_pattern_detection.py")
+            "m02", PROJECT_ROOT / "llm" / "02_pattern_detection.py")
         assert spec is not None
 
     def test_import_module_03(self):
         spec = importlib.util.spec_from_file_location(
-            "m03", PROJECT_ROOT / "03_cross_reference_analysis.py")
+            "m03", PROJECT_ROOT / "llm" / "03_cross_reference_analysis.py")
         assert spec is not None
 
     def test_import_module_04(self):
         spec = importlib.util.spec_from_file_location(
-            "m04", PROJECT_ROOT / "04_fraud_ring_investigation.py")
+            "m04", PROJECT_ROOT / "llm" / "04_fraud_ring_investigation.py")
         assert spec is not None
 
     def test_import_module_05(self):
         spec = importlib.util.spec_from_file_location(
-            "m05", PROJECT_ROOT / "05_evaluation_framework.py")
+            "m05", PROJECT_ROOT / "llm" / "05_evaluation_framework.py")
         assert spec is not None
 
     def test_import_module_06(self):
         spec = importlib.util.spec_from_file_location(
-            "m06", PROJECT_ROOT / "06_observability_dashboard.py")
+            "m06", PROJECT_ROOT / "llm" / "06_observability_dashboard.py")
         assert spec is not None
 
 
@@ -425,9 +425,10 @@ class TestProjectStructure:
         # Utils
         "utils/__init__.py", "utils/azure_client.py", "utils/telemetry.py", "utils/auth.py",
         # LLM modules
-        "01_data_exploration.py", "02_pattern_detection.py",
-        "03_cross_reference_analysis.py", "04_fraud_ring_investigation.py",
-        "05_evaluation_framework.py", "06_observability_dashboard.py",
+        "llm/README.md",
+        "llm/01_data_exploration.py", "llm/02_pattern_detection.py",
+        "llm/03_cross_reference_analysis.py", "llm/04_fraud_ring_investigation.py",
+        "llm/05_evaluation_framework.py", "llm/06_observability_dashboard.py",
         # Data generator
         "data/generate_synthetic_data.py",
         # Agents

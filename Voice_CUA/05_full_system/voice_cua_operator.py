@@ -315,7 +315,9 @@ async def main():
                 t = event.get("type", "")
 
                 if t == "input_audio_buffer.speech_started":
-                    player.clear()                    response_active = False                    print("  🎤 [interrupting...]", end="", flush=True)
+                    player.clear()
+                    response_active = False
+                    print("  🎤 [interrupting...]", end="", flush=True)
                 elif t == "input_audio_buffer.speech_stopped":
                     print(" ✓")
                 elif t == "conversation.item.input_audio_transcription.completed":
