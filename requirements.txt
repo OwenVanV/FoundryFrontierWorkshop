@@ -1,0 +1,31 @@
+# ============================================================================
+# PayPal x Azure AI Workshop — "Cracking the Ring"
+# Dependencies
+# ============================================================================
+
+# Azure OpenAI & AI Services
+openai>=1.30.0
+azure-identity>=1.16.0
+azure-ai-evaluation>=1.0.0
+
+# Observability & Telemetry
+opentelemetry-api>=1.24.0
+opentelemetry-sdk>=1.24.0
+opentelemetry-exporter-otlp>=1.24.0
+azure-monitor-opentelemetry>=1.4.0
+azure-monitor-opentelemetry-exporter>=1.0.0b27
+
+# Data Processing
+pandas>=2.2.0
+numpy>=1.26.0
+
+# Visualization (for Module 06 dashboard)
+rich>=13.7.0
+plotext>=5.2.8
+
+# Environment Configuration
+python-dotenv>=1.0.0
+
+# HTTP & Utilities
+httpx>=0.27.0
+tenacity>=8.3.0

@@ -1,0 +1,25 @@
+# ============================================================================
+# Search + RAG Scenario — Dependencies
+# ============================================================================
+
+# Azure Content Understanding (GA)
+azure-ai-contentunderstanding>=1.0.0
+
+# Azure AI Search
+azure-search-documents>=11.6.0
+
+# Agent Framework (MAF)
+agent-framework>=1.0.0
+agent-framework-foundry>=1.0.0
+
+# Azure Auth & OpenAI
+azure-identity>=1.16.0
+openai>=1.30.0
+
+# Data
+pandas>=2.2.0
+numpy>=1.26.0
+
+# Utilities
+python-dotenv>=1.0.0
+rich>=13.7.0

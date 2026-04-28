@@ -1,0 +1,20 @@
+# ============================================================================
+# PayPal x Azure AI Workshop — Agents Deep-Dive
+# Dependencies
+# ============================================================================
+
+# Microsoft Agent Framework (MAF)
+agent-framework>=1.0.0
+agent-framework-foundry>=1.0.0
+
+# Foundry Agent Service (Prompt Agents + Code Interpreter)
+azure-ai-projects>=2.1.0
+azure-identity>=1.16.0
+
+# Data Processing
+pandas>=2.2.0
+numpy>=1.26.0
+
+# Utilities
+python-dotenv>=1.0.0
+rich>=13.7.0

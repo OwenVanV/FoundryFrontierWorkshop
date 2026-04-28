@@ -1,0 +1,18 @@
+# ============================================================================
+# Voice + CUA Workshop — Dependencies
+# ============================================================================
+
+# WebSocket for Voice Live API
+websockets>=12.0
+
+# Audio I/O
+sounddevice>=0.4.6
+soundfile>=0.12.1
+numpy>=1.26.0
+
+# Azure
+azure-identity>=1.16.0
+openai>=1.30.0
+
+# Utilities
+python-dotenv>=1.0.0
