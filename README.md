@@ -43,6 +43,10 @@ No single signal is conclusive. Only cross-referencing reveals the ring.
 # Install uv (if needed)
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
+# or
+
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+
 # Install all dependencies
 uv sync --extra all
 
