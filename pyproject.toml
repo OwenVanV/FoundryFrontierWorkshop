@@ -27,11 +27,10 @@ dependencies = [
 # LLM modules (01-06): observability, telemetry, evaluation
 llm = [
     "azure-ai-evaluation>=1.0.0",
-    "opentelemetry-api>=1.24.0",
-    "opentelemetry-sdk>=1.24.0",
-    "opentelemetry-exporter-otlp>=1.24.0",
-    "azure-monitor-opentelemetry>=1.4.0",
-    "azure-monitor-opentelemetry-exporter>=1.0.0b27",
+    "opentelemetry-api==1.40.0",
+    "opentelemetry-sdk==1.40.0",
+    "opentelemetry-exporter-otlp>=1.24.0,<=1.40.0",
+    "azure-monitor-opentelemetry-exporter>=1.0.0b51",
     "rich>=13.7.0",
     "plotext>=5.2.8",
 ]

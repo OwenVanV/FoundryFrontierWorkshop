@@ -66,11 +66,16 @@ except ImportError:
 # ============================================================================
 # Azure Monitor integration (optional — only if configured)
 # ============================================================================
+AZURE_MONITOR_AVAILABLE = False
 try:
-    from azure.monitor.opentelemetry.exporter import AzureMonitorTraceExporter
+    from azure.monitor.opentelemetry.exporter.export.trace._exporter import AzureMonitorTraceExporter
     AZURE_MONITOR_AVAILABLE = True
-except ImportError:
-    AZURE_MONITOR_AVAILABLE = False
+except (ImportError, Exception):
+    try:
+        from azure.monitor.opentelemetry.exporter import AzureMonitorTraceExporter
+        AZURE_MONITOR_AVAILABLE = True
+    except (ImportError, Exception):
+        pass
 
 load_dotenv()
 
