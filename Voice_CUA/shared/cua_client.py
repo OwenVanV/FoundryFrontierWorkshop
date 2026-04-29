@@ -26,6 +26,13 @@ import asyncio
 import logging
 from pathlib import Path
 
+# Ensure stdout handles UTF-8 on Windows
+if sys.platform == "win32" and hasattr(sys.stdout, "reconfigure"):
+    try:
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:
+        pass
+
 from dotenv import load_dotenv
 load_dotenv()
 

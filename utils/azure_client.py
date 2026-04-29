@@ -35,6 +35,14 @@ from dotenv import load_dotenv
 from openai import AzureOpenAI
 from tenacity import retry, stop_after_attempt, wait_exponential, retry_if_exception_type
 
+# Ensure stdout handles UTF-8 on Windows (prevents charmap codec errors
+# from box-drawing characters and emojis in streaming output)
+if sys.platform == "win32" and hasattr(sys.stdout, "reconfigure"):
+    try:
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:
+        pass
+
 # Load environment variables from .env file
 load_dotenv()
 

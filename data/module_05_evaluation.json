@@ -1,0 +1,314 @@
+{
+  "module": "05_evaluation_framework",
+  "timestamp": "2026-04-29T15:48:52Z",
+  "metrics": {
+    "member_metrics": {
+      "label": "fraud_ring_members",
+      "true_positives": 3,
+      "false_positives": 33,
+      "false_negatives": 15,
+      "precision": 0.0833,
+      "recall": 0.1667,
+      "f1_score": 0.1111,
+      "true_positive_ids": [
+        "CUS-590982DE94CE",
+        "CUS-8BFC2324CBDE",
+        "CUS-F6DAD4358C6F"
+      ],
+      "false_positive_ids": [
+        "CUS-0066E05B2613",
+        "CUS-0942A6700138",
+        "CUS-0A1C0C68E404",
+        "CUS-1021F4670464",
+        "CUS-227917A33603",
+        "CUS-29EA1B66B731",
+        "CUS-29FF125EC339",
+        "CUS-2DE44EB11651",
+        "CUS-3FE98567E4B0",
+        "CUS-40AEC74924A0",
+        "CUS-4AA31ADD8044",
+        "CUS-5404CB006759",
+        "CUS-74F7C8043841",
+        "CUS-7B7CAA4C96DA",
+        "CUS-8DDD3396835F",
+        "CUS-941EC2B92D42",
+        "CUS-9DEFFD8D9328",
+        "CUS-A9B861089208",
+        "CUS-ABAAAC8834A3",
+        "CUS-B09A0ED1F2C1",
+        "CUS-B4C648685008",
+        "CUS-B6FD89BEE12B",
+        "CUS-B9AB72F4CD6F",
+        "CUS-C03AD24F96A5",
+        "CUS-C48E22863107",
+        "CUS-C9872E53F570",
+        "CUS-D0E3EF7910E6",
+        "CUS-E30F8C59B446",
+        "CUS-E5930F2032F4",
+        "CUS-E7F357E059CB",
+        "CUS-E8315C7EC541",
+        "CUS-ECA83BEAD7F1",
+        "CUS-FE76812FDCE7"
+      ],
+      "false_negative_ids": [
+        "CUS-07DC073F5784",
+        "CUS-22FB4145CC33",
+        "CUS-30862C1FB9F5",
+        "CUS-3BE789957114",
+        "CUS-3BF5666335BC",
+        "CUS-44EC16A04E61",
+        "CUS-4F069015CD73",
+        "CUS-564898DBDA87",
+        "CUS-703E96D4FEAD",
+        "CUS-7C3628C4F59C",
+        "CUS-8FCC5FB11A9A",
+        "CUS-BAFF8165A144",
+        "CUS-BBD6E20A3030",
+        "CUS-C2B0F67F53A4",
+        "CUS-EEAD2ABB2794"
+      ]
+    },
+    "merchant_metrics": {
+      "label": "shell_merchants",
+      "true_positives": 0,
+      "false_positives": 3,
+      "false_negatives": 4,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0,
+      "true_positive_ids": [],
+      "false_positive_ids": [
+        "MER-UNKNOWN-ABAAAC8834A3-1",
+        "MER-UNKNOWN-B9AB72F4CD6F-1",
+        "MER-UNKNOWN-C03AD24F96A5-1"
+      ],
+      "false_negative_ids": [
+        "MER-0A718EB2F63E",
+        "MER-2151A053A413",
+        "MER-7DE7076A206B",
+        "MER-DF576ACF6AF6"
+      ]
+    },
+    "combined_metrics": {
+      "label": "combined",
+      "true_positives": 3,
+      "false_positives": 36,
+      "false_negatives": 19,
+      "precision": 0.0769,
+      "recall": 0.1364,
+      "f1_score": 0.0984,
+      "true_positive_ids": [
+        "CUS-590982DE94CE",
+        "CUS-8BFC2324CBDE",
+        "CUS-F6DAD4358C6F"
+      ],
+      "false_positive_ids": [
+        "CUS-0066E05B2613",
+        "CUS-0942A6700138",
+        "CUS-0A1C0C68E404",
+        "CUS-1021F4670464",
+        "CUS-227917A33603",
+        "CUS-29EA1B66B731",
+        "CUS-29FF125EC339",
+        "CUS-2DE44EB11651",
+        "CUS-3FE98567E4B0",
+        "CUS-40AEC74924A0",
+        "CUS-4AA31ADD8044",
+        "CUS-5404CB006759",
+        "CUS-74F7C8043841",
+        "CUS-7B7CAA4C96DA",
+        "CUS-8DDD3396835F",
+        "CUS-941EC2B92D42",
+        "CUS-9DEFFD8D9328",
+        "CUS-A9B861089208",
+        "CUS-ABAAAC8834A3",
+        "CUS-B09A0ED1F2C1",
+        "CUS-B4C648685008",
+        "CUS-B6FD89BEE12B",
+        "CUS-B9AB72F4CD6F",
+        "CUS-C03AD24F96A5",
+        "CUS-C48E22863107",
+        "CUS-C9872E53F570",
+        "CUS-D0E3EF7910E6",
+        "CUS-E30F8C59B446",
+        "CUS-E5930F2032F4",
+        "CUS-E7F357E059CB",
+        "CUS-E8315C7EC541",
+        "CUS-ECA83BEAD7F1",
+        "CUS-FE76812FDCE7",
+        "MER-UNKNOWN-ABAAAC8834A3-1",
+        "MER-UNKNOWN-B9AB72F4CD6F-1",
+        "MER-UNKNOWN-C03AD24F96A5-1"
+      ],
+      "false_negative_ids": [
+        "CUS-07DC073F5784",
+        "CUS-22FB4145CC33",
+        "CUS-30862C1FB9F5",
+        "CUS-3BE789957114",
+        "CUS-3BF5666335BC",
+        "CUS-44EC16A04E61",
+        "CUS-4F069015CD73",
+        "CUS-564898DBDA87",
+        "CUS-703E96D4FEAD",
+        "CUS-7C3628C4F59C",
+        "CUS-8FCC5FB11A9A",
+        "CUS-BAFF8165A144",
+        "CUS-BBD6E20A3030",
+        "CUS-C2B0F67F53A4",
+        "CUS-EEAD2ABB2794",
+        "MER-0A718EB2F63E",
+        "MER-2151A053A413",
+        "MER-7DE7076A206B",
+        "MER-DF576ACF6AF6"
+      ]
+    }
+  },
+  "error_analysis": {
+    "false_positive_analysis": {
+      "count": 36,
+      "likely_causes": [
+        "Member detection appears heavily over-inclusive: 33 false positives versus 3 true positives suggests the system likely treated weak correlation signals as sufficient evidence of ring membership.",
+        "The detector may have over-weighted local proximity features such as shared transaction timing, partial behavioral similarity, or adjacency to confirmed entities without requiring multiple independent fraud signals.",
+        "Merchant detection produced 3 false positives and 0 true positives, indicating the system likely inferred merchant involvement from suspicious customers alone rather than from direct merchant-side evidence such as shell merchant clustering or circular flow participation.",
+        "Use of placeholder merchant labels like MER-UNKNOWN-* suggests entity resolution may be weak; the model may have created speculative merchant nodes from incomplete records and then classified them as fraudulent.",
+        "Ground truth signals are multi-factor and coordinated, but the predictions likely relied on single-signal triggers. This commonly produces false positives when benign customers exhibit one suspicious trait, such as unusual travel, clustered timing, or high-value transfers, without broader ring behavior.",
+        "The model may not have been explicitly instructed to distinguish 'associated with suspicious activity' from 'confirmed fraud ring member,' causing it to label peripheral or incidental entities as members."
+      ],
+      "mitigation_strategies": [
+        "Require multi-signal confirmation before labeling an entity as part of the fraud ring, for example at least 2 to 3 independent indicators among shared devices, temporal coordination, circular flow, synthetic identity linkage, merchant clustering, or impossible travel.",
+        "Add a prompt rule that customer and merchant predictions must cite direct evidence tied to the known ground-truth signal categories, not just general suspiciousness.",
+        "Introduce confidence thresholds with explicit abstention behavior: if evidence is incomplete, classify as 'suspicious but unconfirmed' instead of positive.",
+        "Separate customer-risk scoring from ring-membership classification so that adjacent but unsupported entities are not escalated into confirmed members.",
+        "For merchants, require explicit merchant-centric evidence such as repeated linkage to coordinated accounts, shell-name clustering, circular settlement patterns, or synchronized laundering behavior before flagging.",
+        "Tighten entity resolution instructions so the model does not generate or flag inferred 'unknown' merchants unless there is enough transactional and identity context to support a real merchant node.",
+        "Use negative examples in prompting that show benign customers with one suspicious pattern but lacking coordinated cross-signal evidence, to reduce overgeneralization."
+      ]
+    },
+    "false_negative_analysis": {
+      "count": 19,
+      "missed_signals": [
+        "The system missed 15 true fraud members, indicating poor recall on the customer side despite the presence of known coordinated ring signals.",
+        "Merchant recall is especially weak: 4 false negatives and 0 true positives imply the detector failed to capture the shell merchant component of the fraud ring.",
+        "Ground truth includes shell_merchant_name_clustering, but no real merchant true positives were identified, so merchant-name similarity or shell-entity linkage was likely underused or ignored.",
+        "Ground truth includes device_fingerprint_sharing_6_accounts_3_devices; missed members may have been connected primarily through shared-device evidence that the system failed to propagate across the network.",
+        "Ground truth includes temporal_coordination_3_7_minute_windows; the detector may have used windows that were too broad, too narrow, or not sequence-aware, causing coordinated bursts to be missed.",
+        "Ground truth includes circular_money_flow_48_72hr_delays; the model may not have tracked delayed multi-hop fund movement well enough to identify participants not directly adjacent in the transfer chain.",
+        "Ground truth includes smurfing_amount_range_9200_9800; if prompts emphasized exact matching or larger-value anomalies, accounts repeatedly transacting in this narrow structured range may have been missed.",
+        "Ground truth includes synthetic_identity_registration_clustering; the model may have lacked onboarding and KYC linkage context needed to connect otherwise low-activity or newly created accounts.",
+        "Ground truth includes impossible_travel_lagos_london_mumbai_singapore; the system may have treated geolocation anomalies as standalone noise rather than one component of a broader coordinated pattern."
+      ],
+      "detection_improvements": [
+        "Explicitly instruct the model to search for all listed signal families and then identify entities connected by combinations of those signals, not only the most obvious actors.",
+        "Add graph-based reasoning steps in the prompt: identify seed entities, expand to linked devices, merchants, transaction chains, time-window cohorts, and registration clusters, then score each entity by evidence count.",
+        "Require dedicated merchant analysis rather than deriving merchant outcomes from customer analysis; include shell-name similarity, shared settlement behavior, and repeated interaction with coordinated members.",
+        "Tell the model to analyze delayed patterns over 48 to 72 hours and not just same-session or same-day proximity, improving capture of circular money flow participants.",
+        "Specify the exact smurfing range 9200 to 9800 in the prompt and ask for repeated structured amounts around that band, including near-threshold fragmentation behavior.",
+        "Instruct the model to look for shared device fingerprints spanning multiple accounts and to treat device-sharing as a network expansion signal rather than isolated evidence.",
+        "Ask for explicit review of onboarding similarities, registration metadata, and synthetic identity markers to catch accounts that look weak individually but are clustered collectively.",
+        "Use a checklist-style prompt that forces evaluation of each entity against every known signal category before excluding it."
+      ]
+    },
+    "prompt_engineering_recommendations": [
+      {
+        "current_approach": "Likely flags entities based on general suspicious behavior or partial similarity.",
+        "suggested_change": "Require the model to classify an entity as a fraud-ring member only when it can cite at least 2 independent ground-truth-aligned signals, with evidence listed for each.",
+        "expected_impact": "Should materially reduce false positives by preventing one-signal overclassification."
+      },
+      {
+        "current_approach": "Likely mixes customer and merchant inference in one pass.",
+        "suggested_change": "Split the prompt into separate stages: customer ring-member detection, merchant shell detection, then cross-entity linkage validation.",
+        "expected_impact": "Should improve merchant precision and recall by forcing merchant-specific reasoning instead of indirect inference."
+      },
+      {
+        "current_approach": "May use unstructured reasoning over all activity.",
+        "suggested_change": "Use a structured checklist covering smurfing amounts, 48-72 hour circular flows, merchant-name clustering, device sharing, impossible travel, synthetic identity clustering, and 3-7 minute coordination windows.",
+        "expected_impact": "Should improve recall by ensuring no known signal family is omitted."
+      },
+      {
+        "current_approach": "Likely does not distinguish strong evidence from weak association.",
+        "suggested_change": "Add output labels such as 'confirmed member', 'associated but insufficient evidence', and 'not supported', with strict evidence thresholds.",
+        "expected_impact": "Should reduce false positives while preserving useful investigative leads."
+      },
+      {
+        "current_approach": "May not explicitly reason over network propagation.",
+        "suggested_change": "Prompt the model to build a linkage graph: shared devices, common merchants, repeated transfer paths, timing clusters, and registration overlaps, then score nodes by multi-hop evidence.",
+        "expected_impact": "Should improve recall on hidden or indirect ring participants."
+      },
+      {
+        "current_approach": "Likely lacks exact parameterization of known fraud signatures.",
+        "suggested_change": "Embed exact signal thresholds in the prompt, including amount band 9200-9800, circular delays of 48-72 hours, and coordination windows of 3-7 minutes.",
+        "expected_impact": "Should improve sensitivity to the actual fraud pattern and reduce misses from vague interpretation."
+      },
+      {
+        "current_approach": "May infer unknown merchants from sparse references.",
+        "suggested_change": "Instruct the model not to create or flag merchant entities unless there is explicit merchant identity evidence plus at least one merchant-centric fraud signal.",
+        "expected_impact": "Should reduce speculative merchant false positives."
+      }
+    ],
+    "overall_assessment": "Performance is weak overall. Member detection precision is low (3 / 36 = 0.0833), recall is also low (3 / 18 = 0.1667), and F1 is 0.1111. Merchant detection precision is 0.0000, recall is 0.0000, and F1 is 0.0000. Combined across member and merchant detection, precision is 3 / 39 = 0.0769, recall is 3 / 22 = 0.1364, and F1 is 0.0976. The dominant issue is overprediction of customer members together with near-total failure to detect the merchant side and many true ring participants. False positives likely stem from weak-evidence overclassification, while false negatives suggest incomplete use of the known coordinated signals, especially merchant clustering, device sharing, circular flow delays, and temporal coordination. Additional helpful data would include transaction graph paths with timestamps, device fingerprint mappings, merchant normalization/name similarity features, registration and KYC linkage fields, geolocation sequences, and explicit entity-resolution confidence. The system should move from broad suspiciousness detection to evidence-based multi-signal ring attribution."
+  },
+  "prompt_variant_results": {
+    "variant_results": [
+      {
+        "variant_name": "baseline",
+        "instruction_style": "standard",
+        "predicted_count": 18,
+        "true_positives": 18,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0,
+        "tokens_used": 8562,
+        "latency_ms": 10509.6
+      },
+      {
+        "variant_name": "chain_of_thought",
+        "instruction_style": "chain_of_thought",
+        "predicted_count": 18,
+        "true_positives": 18,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0,
+        "tokens_used": 8570,
+        "latency_ms": 19540.9
+      },
+      {
+        "variant_name": "high_precision",
+        "instruction_style": "high_precision",
+        "predicted_count": 11,
+        "true_positives": 11,
+        "false_positives": 0,
+        "false_negatives": 7,
+        "precision": 1.0,
+        "recall": 0.6111,
+        "f1_score": 0.7586,
+        "tokens_used": 8543,
+        "latency_ms": 7877.6
+      },
+      {
+        "variant_name": "high_recall",
+        "instruction_style": "high_recall",
+        "predicted_count": 22,
+        "true_positives": 18,
+        "false_positives": 4,
+        "false_negatives": 0,
+        "precision": 0.8182,
+        "recall": 1.0,
+        "f1_score": 0.9,
+        "tokens_used": 8659,
+        "latency_ms": 9185.1
+      }
+    ],
+    "best_variant": "baseline"
+  },
+  "token_usage": {
+    "prompt_tokens": 33951,
+    "completion_tokens": 3444,
+    "total_tokens": 37395,
+    "api_calls": 5
+  },
+  "estimated_cost_usd": 0.221415
+}

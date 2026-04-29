@@ -50,7 +50,8 @@ uv sync --extra all
 uv run python data/generate_synthetic_data.py
 
 # Launch all 4 demo apps
-./run_all.sh
+./run_all.sh          # macOS/Linux
+# .\run_all.ps1       # Windows PowerShell
 
 # Or launch one track at a time
 uv run streamlit run demo/streamlit_llm.py        # LLM Track
@@ -58,6 +59,8 @@ uv run streamlit run demo/streamlit_agents.py     # Agents Track
 uv run streamlit run demo/streamlit_search_rag.py # Search + RAG Track
 uv run streamlit run demo/streamlit_voice_cua.py  # Voice + CUA Track
 ```
+
+> **Windows users:** Install uv with `irm https://astral.sh/uv/install.ps1 | iex`, then restart your terminal. If you see `charmap` encoding errors, set `$env:PYTHONIOENCODING = "utf-8"` before running.
 
 ### Prerequisites
 

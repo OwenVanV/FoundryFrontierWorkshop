@@ -162,7 +162,9 @@ def stream_subprocess(cmd: list[str], cwd: str = None) -> None:
             text=True,
             bufsize=1,
             cwd=cwd,
-            env={**os.environ, "PYTHONUNBUFFERED": "1"},
+            encoding="utf-8",
+            errors="replace",
+            env={**os.environ, "PYTHONUNBUFFERED": "1", "PYTHONIOENCODING": "utf-8"},
         )
 
         # Place stop button

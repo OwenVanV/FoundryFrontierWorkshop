@@ -10,6 +10,9 @@
 
 set -e
 
+# Ensure UTF-8 for Unicode output (box-drawing, emojis)
+export PYTHONIOENCODING=utf-8
+
 echo "=============================================="
 echo "  PayPal x Azure AI Workshop — Demo Launcher"
 echo "=============================================="

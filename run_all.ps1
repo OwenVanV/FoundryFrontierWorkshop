@@ -7,6 +7,33 @@
 # Stop:  Ctrl+C in this window (kills all spawned processes)
 # ============================================================================
 
+# Ensure UTF-8 output for Unicode characters (box-drawing, emojis)
+[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+$env:PYTHONIOENCODING = "utf-8"
+
+# Check that uv is available
+if (-not (Get-Command "uv" -ErrorAction SilentlyContinue)) {
+    # Try common install locations
+    $uvPaths = @(
+        "$env:USERPROFILE\.local\bin\uv.exe",
+        "$env:USERPROFILE\.cargo\bin\uv.exe",
+        "$env:LOCALAPPDATA\uv\uv.exe"
+    )
+    $found = $false
+    foreach ($p in $uvPaths) {
+        if (Test-Path $p) {
+            $env:PATH = [System.IO.Path]::GetDirectoryName($p) + ";" + $env:PATH
+            Write-Host "  Found uv at: $p"
+            $found = $true
+            break
+        }
+    }
+    if (-not $found) {
+        Write-Host "ERROR: 'uv' not found. Install it: irm https://astral.sh/uv/install.ps1 | iex"
+        exit 1
+    }
+}
+
 Write-Host "=============================================="
 Write-Host "  PayPal x Azure AI Workshop — Demo Launcher"
 Write-Host "=============================================="

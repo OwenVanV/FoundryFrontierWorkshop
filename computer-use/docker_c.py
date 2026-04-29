@@ -70,17 +70,14 @@ class DockerComputer:
 
     def _exec(self, cmd: str) -> str:
         """
-        Run 'cmd' in the container.
-        We wrap cmd in double quotes and escape any double quotes inside it,
-        so spaces or quotes don't break the shell call.
+        Run 'cmd' inside the container via docker exec.
+        Uses list-based invocation to avoid shell quoting issues on Windows.
         """
-        # Escape any existing double quotes in cmd
-        safe_cmd = cmd.replace('"', '\\"')
-
-        # Then wrap the entire cmd in double quotes for `sh -c`
-        docker_cmd = f'docker exec {self.container_name} sh -c "{safe_cmd}"'
-
-        return subprocess.check_output(docker_cmd, shell=True).decode(
+        docker_cmd = [
+            "docker", "exec", self.container_name,
+            "sh", "-c", cmd,
+        ]
+        return subprocess.check_output(docker_cmd).decode(
             "utf-8", errors="ignore"
         )
 
