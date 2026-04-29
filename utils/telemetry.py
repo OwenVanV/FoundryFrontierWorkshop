@@ -156,6 +156,10 @@ def init_telemetry(service_name: str = "paypal-azure-workshop") -> None:
     _tracer = trace.get_tracer(service_name)
     _initialized = True
 
+    # Register atexit handler to flush spans before process exits
+    import atexit
+    atexit.register(flush_telemetry)
+
 
 # ============================================================================
 # SPAN CREATION — Wraps any operation with timing and attributes
@@ -322,5 +326,23 @@ def export_telemetry_to_file(filepath: str = "data/telemetry_export.json") -> st
     with open(filepath, "w", encoding="utf-8") as f:
         json.dump(export_data, f, indent=2, default=str)
 
+    # Flush any pending Azure Monitor spans before the process exits
+    flush_telemetry()
+
     print(f"  ✓ Telemetry exported to {filepath} ({len(_telemetry_store)} spans, {len(_metric_store)} metrics)")
     return filepath
+
+
+def flush_telemetry() -> None:
+    """Force-flush all pending telemetry spans to Azure Monitor.
+
+    BatchSpanProcessor buffers spans and sends them in batches. If the
+    process exits before a batch is flushed, spans are lost. Call this
+    at the end of each module to ensure all telemetry reaches App Insights.
+    """
+    try:
+        provider = trace.get_tracer_provider()
+        if hasattr(provider, "force_flush"):
+            provider.force_flush(timeout_millis=10000)
+    except Exception:
+        pass
