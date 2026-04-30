@@ -7,6 +7,7 @@ import os
 import sys
 import ast
 import subprocess
+import signal as signal_module
 import threading
 import queue
 import time
@@ -155,22 +156,29 @@ def stream_subprocess(cmd: list[str], cwd: str = None) -> None:
     stop_key = f"stop_{id(cmd)}_{hash(tuple(cmd))}"
 
     with status_container.status("🔄 Running...", expanded=True) as status:
-        process = subprocess.Popen(
-            cmd,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.STDOUT,
-            text=True,
-            bufsize=1,
-            cwd=cwd,
-            encoding="utf-8",
-            errors="replace",
-            env={**os.environ, "PYTHONUNBUFFERED": "1", "PYTHONIOENCODING": "utf-8"},
-        )
+        # Start the process in its own process group so we can kill the
+        # entire tree (uv -> python -> ...) when the stop button is pressed.
+        import sys as _sys
+        popen_kwargs = {
+            "stdout": subprocess.PIPE,
+            "stderr": subprocess.STDOUT,
+            "text": True,
+            "bufsize": 1,
+            "cwd": cwd,
+            "encoding": "utf-8",
+            "errors": "replace",
+            "env": {**os.environ, "PYTHONUNBUFFERED": "1", "PYTHONIOENCODING": "utf-8"},
+        }
+        if _sys.platform != "win32":
+            popen_kwargs["preexec_fn"] = os.setsid  # Create new process group on Unix
+        else:
+            popen_kwargs["creationflags"] = subprocess.CREATE_NEW_PROCESS_GROUP
+
+        process = subprocess.Popen(cmd, **popen_kwargs)
 
         # Place stop button
         stop_clicked = stop_container.button("⏹️ Stop Module", key=stop_key, type="secondary")
 
-        import select
         import time
 
         while process.poll() is None:
@@ -187,11 +195,24 @@ def stream_subprocess(cmd: list[str], cwd: str = None) -> None:
 
             # Check if stop was requested (via session state since button rerenders)
             if stop_clicked:
-                process.terminate()
+                # Kill the entire process group (uv + python + any children)
+                if _sys.platform != "win32":
+                    try:
+                        os.killpg(os.getpgid(process.pid), signal_module.SIGTERM)
+                    except (ProcessLookupError, PermissionError):
+                        process.terminate()
+                else:
+                    process.terminate()
                 try:
                     process.wait(timeout=3)
                 except subprocess.TimeoutExpired:
-                    process.kill()
+                    if _sys.platform != "win32":
+                        try:
+                            os.killpg(os.getpgid(process.pid), signal_module.SIGKILL)
+                        except (ProcessLookupError, PermissionError):
+                            process.kill()
+                    else:
+                        process.kill()
                     process.wait()
                 lines.append("\n⏹️ Module stopped by user.")
                 output_container.code("\n".join(lines[-200:]), language="log", line_numbers=False)
