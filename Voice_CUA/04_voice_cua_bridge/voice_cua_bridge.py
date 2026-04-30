@@ -243,7 +243,16 @@ async def main():
         player.start()
         running = True
 
-        signal.signal(signal.SIGINT, lambda s, f: setattr(sys.modules[__name__], 'running', False) or sys.exit(0))
+        def handle_stop(sig, frame):
+            nonlocal running
+            running = False
+            mic.stop()
+            player.stop()
+            print("\n  Stopping...")
+            sys.exit(0)
+
+        signal.signal(signal.SIGINT, handle_stop)
+        signal.signal(signal.SIGTERM, handle_stop)
 
         # Track whether a response is currently being generated
         response_active = False

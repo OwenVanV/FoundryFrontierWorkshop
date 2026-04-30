@@ -270,7 +270,16 @@ async def main():
         player.start()
         running = True
 
-        signal.signal(signal.SIGINT, lambda s, f: sys.exit(0))
+        def handle_stop(sig, frame):
+            nonlocal running
+            running = False
+            mic.stop()
+            player.stop()
+            print("\n  Stopping...")
+            sys.exit(0)
+
+        signal.signal(signal.SIGINT, handle_stop)
+        signal.signal(signal.SIGTERM, handle_stop)
 
         # Track active response to avoid "already has an active response" errors
         response_active = False

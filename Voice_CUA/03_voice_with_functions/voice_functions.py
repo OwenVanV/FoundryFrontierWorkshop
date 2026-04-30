@@ -271,11 +271,16 @@ async def main():
         player.start()
         running = True
 
-        def handle_sigint(sig, frame):
+        def handle_stop(sig, frame):
             nonlocal running
             running = False
+            mic.stop()
+            player.stop()
+            print("\n  Stopping...")
+            sys.exit(0)
 
-        signal.signal(signal.SIGINT, handle_sigint)
+        signal.signal(signal.SIGINT, handle_stop)
+        signal.signal(signal.SIGTERM, handle_stop)
 
         async def send_audio():
             mic.start()
